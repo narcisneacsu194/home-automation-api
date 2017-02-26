@@ -1,6 +1,6 @@
 package com.company.device;
 
-import com.company.control.Control;
+//import com.company.control.Control;
 import com.company.core.BaseEntity;
 import com.company.room.Room;
 
@@ -15,15 +15,15 @@ import java.util.List;
 public class Device extends BaseEntity{
     private String name;
 
-    @ManyToOne
-    private Room room;
+//    @ManyToOne
+//    private Room room;
 
-    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
-    private List<Control> controls;
+//    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
+//    private List<Control> controls;
 
     protected Device(){
         super();
-        controls = new ArrayList<>();
+//        controls = new ArrayList<>();
     }
 
     public Device(String name){
@@ -39,40 +39,44 @@ public class Device extends BaseEntity{
         this.name = name;
     }
 
-    public Room getRoom() {
-        return room;
-    }
+//    public Room getRoom() {
+//        return room;
+//    }
 
-    public void setRoom(Room room) {
-        this.room = room;
-    }
+//    public void setRoom(Room room) {
+//        this.room = room;
+//    }
 
-    public List<Control> getControls() {
-        return controls;
-    }
+//    public List<Control> getControls() {
+//        return controls;
+//    }
 
-    public void setControls(List<Control> controls) {
-        this.controls = controls;
-    }
+//    public void setControls(List<Control> controls) {
+//        this.controls = controls;
+//    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+//    public void addControl(Control control){
+//        controls.add(control);
+//    }
 
-        Device device = (Device) o;
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        Device device = (Device) o;
+//
+//        if (!name.equals(device.name)) return false;
+//        if (!room.equals(device.room)) return false;
+//        return controls.equals(device.controls);
+//
+//    }
 
-        if (!name.equals(device.name)) return false;
-        if (!room.equals(device.room)) return false;
-        return controls.equals(device.controls);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + room.hashCode();
-        result = 31 * result + controls.hashCode();
-        return result;
-    }
+//    @Override
+//    public int hashCode() {
+//        int result = name.hashCode();
+//        result = 31 * result + room.hashCode();
+//        result = 31 * result + controls.hashCode();
+//        return result;
+//    }
 }

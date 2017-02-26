@@ -1,6 +1,6 @@
-package com.company.control;
-
-import org.springframework.data.repository.PagingAndSortingRepository;
-
-public interface ControlRepository extends PagingAndSortingRepository{
-}
+//package com.company.control;
+//
+//import org.springframework.data.repository.PagingAndSortingRepository;
+//
+//public interface ControlRepository extends PagingAndSortingRepository<Control, Long>{
+//}
