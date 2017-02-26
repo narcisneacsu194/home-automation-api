@@ -14,7 +14,7 @@ import java.util.List;
 public class Room extends BaseEntity{
     private String name;
 
-//    @Max(value = 1000, message = "The room area must be less than 1000 sq ft/sq meters")
+    @Max(value = 1000, message = "The room area must be less than 1000 sq ft/sq meters")
     private Integer area;
 
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
