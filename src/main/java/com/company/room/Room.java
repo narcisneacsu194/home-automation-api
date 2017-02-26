@@ -2,10 +2,11 @@ package com.company.room;
 
 import com.company.core.BaseEntity;
 import com.company.device.Device;
-//import com.company.user.User;
+import com.company.user.User;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import java.util.ArrayList;
@@ -20,13 +21,13 @@ public class Room extends BaseEntity{
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     private List<Device> devices;
 
-//    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
-//    private List<User> users;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<User> users;
 
     protected Room(){
         super();
         devices = new ArrayList<>();
-//        users = new ArrayList<>();
+        users = new ArrayList<>();
     }
 
     public Room(String name, Integer area){
@@ -64,38 +65,16 @@ public class Room extends BaseEntity{
         devices.add(device);
     }
 
-//    public List<User> getUsers() {
-//        return users;
-//    }
+    public List<User> getUsers() {
+        return users;
+    }
 
-//    public void setUsers(List<User> users) {
-//        this.users = users;
-//    }
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 
-//    public void addUser(User user){
-//        users.add(user);
-//    }
+    public void addUser(User user){
+        users.add(user);
+    }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Room room = (Room) o;
-//
-//        if (!name.equals(room.name)) return false;
-//        if (!area.equals(room.area)) return false;
-//        if (!devices.equals(room.devices)) return false;
-//        return users.equals(room.users);
-//
-//    }
-
-//    @Override
-//    public int hashCode() {
-//        int result = name.hashCode();
-//        result = 31 * result + area.hashCode();
-//        result = 31 * result + devices.hashCode();
-//        result = 31 * result + users.hashCode();
-//        return result;
-//    }
 }

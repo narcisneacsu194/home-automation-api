@@ -1,6 +1,5 @@
 package com.company.device;
 
-//import com.company.control.Control;
 import com.company.control.Control;
 import com.company.core.BaseEntity;
 import com.company.room.Room;
@@ -61,24 +60,4 @@ public class Device extends BaseEntity{
         controls.add(control);
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Device device = (Device) o;
-//
-//        if (!name.equals(device.name)) return false;
-//        if (!room.equals(device.room)) return false;
-//        return controls.equals(device.controls);
-//
-//    }
-
-//    @Override
-//    public int hashCode() {
-//        int result = name.hashCode();
-//        result = 31 * result + room.hashCode();
-//        result = 31 * result + controls.hashCode();
-//        return result;
-//    }
 }

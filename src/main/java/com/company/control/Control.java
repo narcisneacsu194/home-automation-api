@@ -2,7 +2,8 @@ package com.company.control;
 
 import com.company.core.BaseEntity;
 import com.company.device.Device;
-//import com.company.user.User;
+import com.company.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -16,8 +17,9 @@ public class Control extends BaseEntity{
 
     private Integer value;
 
-//    @ManyToOne
-//    private User lastModifiedBy;
+    @ManyToOne
+    @JsonIgnore
+    private User lastModifiedBy;
 
     protected Control(){
         super();
@@ -53,34 +55,12 @@ public class Control extends BaseEntity{
         this.value = value;
     }
 
-//    public User getLastModifiedBy() {
-//        return lastModifiedBy;
-//    }
+    public User getLastModifiedBy() {
+        return lastModifiedBy;
+    }
 
-//    public void setLastModifiedBy(User lastModifiedBy) {
-//        this.lastModifiedBy = lastModifiedBy;
-//    }
+    public void setLastModifiedBy(User lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
+    }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Control control = (Control) o;
-//
-//        if (!name.equals(control.name)) return false;
-//        if (!device.equals(control.device)) return false;
-//        if (!value.equals(control.value)) return false;
-//        return lastModifiedBy.equals(control.lastModifiedBy);
-//
-//    }
-
-//    @Override
-//    public int hashCode() {
-//        int result = name.hashCode();
-//        result = 31 * result + device.hashCode();
-//        result = 31 * result + value.hashCode();
-//        result = 31 * result + lastModifiedBy.hashCode();
-//        return result;
-//    }
 }
