@@ -18,7 +18,7 @@ public class Control extends BaseEntity{
     private Integer value;
 
     @ManyToOne
-    @JsonIgnore
+//    @JsonIgnore
     private User lastModifiedBy;
 
     protected Control(){
