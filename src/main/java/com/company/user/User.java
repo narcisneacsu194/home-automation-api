@@ -54,4 +54,12 @@ public class User extends BaseEntity{
         this.password = PASSWORD_ENCODER.encode(password);
     }
 
+    public boolean hasRole(String role) {
+        for(int i = 0; i<roles.length; i++) {
+            if(roles[i].equals(role)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
